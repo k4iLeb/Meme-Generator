@@ -35,10 +35,19 @@ export default function Meme() {
   }
 
   React.useEffect(() => {
-    fetch("https://api.imgflip.com/get_memes")
-      .then((res) => res.json())
-      .then((obj) => setAllMemes(obj.data.memes));
+    async function getMemes() {
+      const res = await fetch("https://api.imgflip.com/get_memes");
+      const data = await res.json();
+      setAllMemes(data.data.memes);
+    }
+    getMemes();
   }, []);
+
+  // React.useEffect(() => {
+  //   fetch("https://api.imgflip.com/get_memes")
+  //     .then((res) => res.json())
+  //     .then((obj) => setAllMemes(obj.data.memes));
+  // }, []);
 
   function handleClick() {
     const random = Math.round(Math.random() * allMemes.length, 0);
