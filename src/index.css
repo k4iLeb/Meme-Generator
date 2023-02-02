@@ -24,6 +24,7 @@ html {
 
 .header {
   /* width: 100%; */
+  justify-content: center;
   padding: 0 20px;
   height: 65px;
   display: flex;
@@ -53,17 +54,12 @@ html {
   letter-spacing: -0.1em;
 }
 
-.header > p {
-  margin-left: auto;
-}
-
 /* *** FORM *** */
 
 .main-container {
   width: 477px;
   padding: 10px 10px;
   margin: 0 auto;
-  /* border: solid 1px black; */
 }
 
 .form-container {
